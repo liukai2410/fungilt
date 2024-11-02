@@ -3,4 +3,7 @@ a deep learning framework for robust classification of fungal species from ITS s
 
 ![abstract](./images/fig0.png)
 
-### 1 Environment configuration
+## 1 Environment configuration
+
+You can choose to clone this project in its entirety
+`You can choose to clone this project in its entirety`
