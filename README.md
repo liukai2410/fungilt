@@ -24,5 +24,16 @@ conda activate your_env_name
 ### 1.3 Install all related dependencies
 ```python
 # Ensure that it is currently located at the location of the dependent file
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
+
+## 2 Installation and project deployment
+### 2.1 Project deployment
+
+### 2.2 File tree
+
+### 2.3 Necessary document description
+
+
+## 3 Quickstart
+### 3.1 
