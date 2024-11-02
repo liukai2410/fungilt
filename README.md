@@ -41,5 +41,5 @@ python -m pip install -r requirements.txt
 ### 3.2 Using pre trained models
 We offer multiple models that have been trained on different fungal scales, and you can choose to use our pre trained models directly, which will greatly reduce training time and computational costs.
 
-Note：But if you have your own dataset, we often recommend using our model structure for retraining and parameter tuning, which may yield better results on your dataset.
+**Note**: But if you have your own dataset, we often recommend using our model structure for retraining and parameter tuning, which may yield better results on your dataset.
 ### 3.3 Retrain the model
