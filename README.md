@@ -7,4 +7,6 @@ a deep learning framework for robust classification of fungal species from ITS s
 
 You can choose to clone this project in its entirety
 
-```git clone https://github.com/liukai2410/fungilt.git```
+```python
+git clone https://github.com/liukai2410/fungilt.git
+```
