@@ -35,7 +35,14 @@ We recommend cloning this project directly to your local computer for faster pro
 ```
 However, in fact, the project may contain a large number of files that are not useful to you, which could result in significant traffic loss. If you are confident enough, we also recommend that you download the corresponding files according to your needs to complete the deployment of the project.
 ### 2.2 File tree
+```python
+·
+├──src/
+|  ├──train
+|  ├──test
+|  └──model
 
+```
 ### 2.3 Necessary document description
 
 
