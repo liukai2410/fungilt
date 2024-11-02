@@ -38,9 +38,9 @@ However, in fact, the project may contain a large number of files that are not u
 ```python
 ·
 ├──src/
-|  ├──train
-|  ├──test
-|  └──model
+│  ├──train
+│  ├──test
+│  └──model
 
 ```
 ### 2.3 Necessary document description
