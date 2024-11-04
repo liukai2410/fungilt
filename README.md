@@ -80,12 +80,12 @@ If you want to use our model for direct prediction or just for validation, you c
   1. Project configuration. Download the necessary files to configure your project according to your needs
     
      ```python
-    config.yaml  # Contains most of the modifiable configuration information
-    src/mian.py
-    src/utils.py
-    src/train/test.py  # Load the model and use it for prediction
-    src/feature_extraction/  # Encode the sequence
-    ```
+     config.yaml  # Contains most of the modifiable configuration information
+     src/mian.py
+     src/utils.py
+     src/train/test.py  # Load the model and use it for prediction
+     src/feature_extraction/  # Encode the sequence
+     ```
   2. Data processing. Process the form of the dataset according to the example of our dataset
      
      ```python
