@@ -53,12 +53,12 @@ However, in fact, the project may contain a large number of files that are not u
 │  │——feature_extraction/
 │  │  │——labels_encoding.py
 │  │  └──sequence_encoding.py
-│  │——danbert_models/ 
-│  │  │——dnabert-3
-│  │  │——dnabert-4
-│  │  │——dnabert-5
-│  │  │——dnabert-6
-│  │  └──dnabert2
+│  └──danbert_models/ 
+│     │——dnabert-3
+│     │——dnabert-4
+│     │——dnabert-5
+│     │——dnabert-6
+│     └──dnabert2
 │——embeddings/  # Intermediate encoding files for data processing
 │——results/
 │  └──tensorboard/  # Draw a learning curve
