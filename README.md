@@ -64,11 +64,11 @@ However, in fact, the project may contain a large number of files that are not u
 │  └──tensorboard/  # Draw a learning curve
 └──output.log  # Record the running status of the program
 ```
-
 ## 3 Quickstart
-### 3.1 Data preparation
+## 4 Instructions
+### 4.1 Data preparation
 
-### 3.2 Using pre trained models
+### 4.2 Using pre trained models
 We offer multiple models that have been trained on different fungal scales, and you can choose to use our pre trained models directly, which will greatly reduce training time and computational costs.
 
 **Note**: But if you have your own dataset, we often recommend using our model structure for retraining and parameter tuning, which may yield better results on your dataset.
@@ -113,4 +113,4 @@ If you want to use our model for direct prediction or just for validation, you c
      nohup python ./src/main.py > ./src/output.log 2>&1
      ```
 
-### 3.3 Retrain the model
+### 4.3 Retrain the model
