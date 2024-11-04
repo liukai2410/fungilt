@@ -78,13 +78,13 @@ We provide most of the information that needs to be set up and configured in the
 If you want to use our model for direct prediction or just for validation, you can follow the steps below：
 
   1. Project configuration. Download the necessary files to configure your project according to your needs
-
-    ```python
-     config.yaml  # Contains most of the modifiable configuration information
-     src/mian.py
-     src/utils.py
-     src/train/test.py  # Load the model and use it for prediction
-     src/feature_extraction/  # Encode the sequence
+    
+     ```python
+    config.yaml  # Contains most of the modifiable configuration information
+    src/mian.py
+    src/utils.py
+    src/train/test.py  # Load the model and use it for prediction
+    src/feature_extraction/  # Encode the sequence
     ```
   2. Data processing. Process the form of the dataset according to the example of our dataset
      
@@ -95,22 +95,22 @@ If you want to use our model for direct prediction or just for validation, you c
      ```
   3. Modify configuration information
 
-    ```python
-    # 1 Confirm that the training mode of the model has been turned off
-    train_mode:
-      enable : 0
-    # 2 Confirm that the kmer, sequence encoding method, etc. meet the requirements of the specific model
-    # 3 Confirm if the path using the dataset is correct
-    ```
+     ```python
+     # 1 Confirm that the training mode of the model has been turned off
+     train_mode:
+       enable : 0
+     # 2 Confirm that the kmer, sequence encoding method, etc. meet the requirements of the specific model
+     # 3 Confirm if the path using the dataset is correct
+     ```
   4. Run
 
-    ```python
-    # 1 Enter your project file，
-    cd your_project
-    # 2 Activate your operating environment
-    conda activate your_env_name
-    # 3 Run, reload the running information to the log file
-    nohup python ./src/main.py > ./src/output.log 2>&1
-    ```
+     ```python
+     # 1 Enter your project file，
+     cd your_project
+     # 2 Activate your operating environment
+     conda activate your_env_name
+     # 3 Run, reload the running information to the log file
+     nohup python ./src/main.py > ./src/output.log 2>&1
+     ```
 
 ### 3.3 Retrain the model
