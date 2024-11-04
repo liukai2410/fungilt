@@ -64,8 +64,6 @@ However, in fact, the project may contain a large number of files that are not u
 │  └──tensorboard/  # Draw a learning curve
 └──output.log  # Record the running status of the program
 ```
-### 2.3 Necessary document description
-
 
 ## 3 Quickstart
 ### 3.1 Data preparation
@@ -74,4 +72,15 @@ However, in fact, the project may contain a large number of files that are not u
 We offer multiple models that have been trained on different fungal scales, and you can choose to use our pre trained models directly, which will greatly reduce training time and computational costs.
 
 **Note**: But if you have your own dataset, we often recommend using our model structure for retraining and parameter tuning, which may yield better results on your dataset.
+
+We provide most of the information that needs to be set up and configured in the config.yaml file.
+
+If you want to use our model for direct prediction or just for validation, you can follow the steps below：
+
+  1. Project configuration. Download the necessary files to configure your project according to your needs
+    ```python
+
+    ```
+  3. Data processing. Process the form of the dataset according to the example of our dataset
+
 ### 3.3 Retrain the model
