@@ -1,0 +1,295 @@
+# 一、准备阶段
+# 1 设置随机种子
+seed:
+  seed_size : 42
+
+# 2 是否开启多卡并行计算
+parallel_computing:
+  enable : 0
+
+# 3 序列掩码数据增强是否开启
+mask_data_augmentation:
+  enable : 0
+
+# 4 是否禁用进度条
+disable_process:
+  enable : 1
+
+# 5 保存模型的模式
+save_model:
+  mode : 1  # 1 表示保存完整的模型  0 表示保存模型参数
+
+# 6 是否开启训练模式
+train_mode:
+  enable : 1
+
+# 7 是否开启测试模式
+test_mode:
+  enable : 1
+
+# 8 是否开启早停机制
+early_stopping:
+  enable : 1
+
+# 9 是否开启交叉验证方法
+kfold_cross_validation:
+  enable : 0
+
+# 10 三视角特征开启
+three_data:
+  enable : 0
+
+# 11 细菌16S
+rna_data:
+  enable : 0
+
+# 二、序列编码阶段
+# 1 设置kmer的k值
+k_mer:
+  k : 5
+
+# 2 选择序列编码方法
+seq_encoder:
+  # word2vec1 ， 词向量编码，累加式，固定长度，1*100
+  # dna2vec
+  # word2vec2 ， 词向量编码，不固定长度，所以要修剪原序列长度
+  # kmer_freq ， 计算kmer频率
+  # kmer_fre_and_word2vec1
+  # kmer_fre_and_dnabert
+  # kmer_fre_and_dnabert2
+  # kmer_fre_and_dna2vec
+  # kmer_freX_and_word2vec1
+  # word2vec_and_dnabert
+  # dnabert
+  # dnabert2
+  # kmer_freq_X kmer频率的增强方法
+  # kmers_encoder1
+  # name : 'kmer_freq'
+  name : 'dnabert'
+
+# 3 选择标签编码方法
+label_encoder:
+  # onehot
+  # int
+  name : 'int'
+# 4 词向量模型相关参数设置
+word2vec:
+  window : 5
+  workers : 32
+  min_count : 1
+  vector_size : 512
+
+# 三、序列处理阶段
+# 设置序列长度，根据这个长度对序列数据进行填充和截断
+seq_length:
+  target_length : 800
+
+
+# 四、训练阶段
+# 1 模型训练相关参数设置
+train:
+  batch_size : 128
+  epochs : 200 # 训练轮数
+  # 损失函数
+  # 1：CrossEntropyLoss()交叉熵损失函数
+  criterion : 'crossentropyloss'
+  # 优化器
+  # 1：Adam()
+  optimizer : 'adam'
+  lr : 0.0001
+  # 数据加载使用进程数
+  num_workers : 32
+
+# 2 选择模型
+models:
+  # 卷积层维度，不同的维度，输入数据的形状不同
+  - name : 'cnn_model_test2d'
+    # 卷积层的维度
+    # 是否启用 1 启用 0 禁用
+    value : 
+      dim : 2 
+      enable : 0
+  - name : 'cnn_model_lenet1d'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'cnn_model_lenet2d'
+    value : 
+      dim : 2
+      enable : 0
+  - name : 'ResNet18_2D'
+    value : 
+      dim : 2
+      enable : 0
+  - name : 'ResNet18_1D'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'ResNet34_1D'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'ResNet50_1D'
+    value : 
+      dim : 1
+      enable : 0 # 是否启用
+  - name : 'ResNet101_1D'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'ResNet152_1D'
+    value : 
+      dim : 1
+      enable : 0
+  
+  # 循环神经网络模型
+  - name : 'RNN_GRU'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'RNN_LSTM'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'RNN_xLSTM'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'RNN_Transformer_LSTM'
+    value : 
+      dim : 1
+      enable : 1  #
+  - name : 'RNN_Transformer_LSTM2'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'RNN_LSTM_Attention'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'Multi_View_Feature_Fusion_LSTM'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'Multi_View_Feature_Fusion_LSTM2'
+    value : 
+      dim : 1
+      enable : 0  #
+  - name : 'Multi_View_Feature_Fusion_LSTM3'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'KAN_LSTM'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'KAN_Transformer'
+    value : 
+      dim : 1
+      enable : 0
+  - name : 'CNN_Transformer_LSTM'
+    value : 
+      dim : 1
+      enable : 1
+
+
+# 3 选择数据
+file_path:
+  # 测试数据集1
+  - name : 'test'
+    value :
+      path : './dataset/unite_dataset/test_data/data.csv'
+      enable : 0
+  # 测试数据集2
+  - name : 'count_sequences_test_500'
+    value :
+      path : './dataset/count_sequences_test/sequences_500.csv'
+      enable : 0
+  - name : 'count_sequences_test_400'
+    value :
+      path : './dataset/count_sequences_test/sequences_400.csv'
+      enable : 0
+  - name : 'count_sequences_test_300'
+    value :
+      path : './dataset/count_sequences_test/sequences_300.csv'
+      enable : 0
+  - name : 'count_sequences_test_200'
+    value :
+      path : './dataset/count_sequences_test/sequences_200.csv'
+      enable : 0
+  - name : 'count_sequences_test_100'
+    value :
+      path : './dataset/count_sequences_test/sequences_100.csv'
+      enable : 0
+  - name : 'count_sequences_test_50'
+    value :
+      path : './dataset/count_sequences_test/sequences_50.csv'
+      enable : 0
+  - name : 'count_sequences_test_20'
+    value :
+      path : './dataset/count_sequences_test/sequences_20.csv'
+      enable : 0
+      
+  - name : '01_dataset'
+    value :
+      path : './dataset/datasets/01_dataset.csv'
+      enable : 0
+
+  - name : '02_dataset'
+    value :
+      path : './dataset/datasets/02_dataset.csv'
+      enable : 0
+  # 8616*100=861600
+  - name : '03_dataset'
+    value :
+      path : './dataset/datasets/03_dataset.csv'
+      enable : 0
+  # 13776*20=275520
+  - name : '04_dataset'
+    value :
+      path : './dataset/datasets/04_dataset.csv'
+      enable : 0
+  # 13776*20=275520掩码增强数据
+  - name : '04_dataset_s'
+    value :
+      path : './dataset/augement/04_dataset.csv'
+      enable : 0
+  # 17559*10=175590
+  - name : '05_dataset'
+    value :
+      path : './dataset/datasets/05_dataset.csv'
+      enable : 1
+  # 93975*100=9397500
+  - name : '06_dataset'
+    value :
+      path : './dataset/datasets/06_dataset.csv'
+      enable : 0
+  # 93975*20=1879500
+  - name : '07_dataset'
+    value :
+      path : './dataset/datasets/07_dataset.csv'
+      enable : 0
+  # 93975*50=4698750
+  - name : '08_dataset'
+    value :
+      path : './dataset/datasets/08_dataset.csv'
+      enable : 0
+  # 93975*10=939750
+  - name : '09_dataset'
+    value :
+      path : './dataset/datasets/09_dataset.csv'
+      enable : 0
+  # 10524*50=526200
+  - name : '10_dataset'
+    value :
+      path : './dataset/datasets/10_dataset.csv'
+      enable : 0
+  # 2835*10=28350
+  - name : '11_dataset'
+    value :
+      path : './dataset/datasets/11_dataset.csv'
+      enable : 0
+
+# 4 保存与加载模型
+save_model_path:
+  path : './src/save_models/save_model.pth'
