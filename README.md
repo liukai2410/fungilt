@@ -114,3 +114,4 @@ If you want to use our model for direct prediction or just for validation, you c
      ```
 
 ### 4.3 Retrain the model
+If you have your own dataset, we recommend retraining the model. You can modify some parameters as needed to improve its performance on your dataset.
