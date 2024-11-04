@@ -78,6 +78,7 @@ We provide most of the information that needs to be set up and configured in the
 If you want to use our model for direct prediction or just for validation, you can follow the steps below：
 
   1. Project configuration. Download the necessary files to configure your project according to your needs
+
     ```python
      config.yaml  # Contains most of the modifiable configuration information
      src/mian.py
@@ -86,12 +87,14 @@ If you want to use our model for direct prediction or just for validation, you c
      src/feature_extraction/  # Encode the sequence
     ```
   2. Data processing. Process the form of the dataset according to the example of our dataset
+     
      ```python
      # 1 Process the dataset format based on our own dataset
      # 2 We provide methods for processing datasets, including files in the most commonly used fasta format
      data_processing.py
      ```
   3. Modify configuration information
+
     ```python
     # 1 Confirm that the training mode of the model has been turned off
     train_mode:
@@ -100,6 +103,7 @@ If you want to use our model for direct prediction or just for validation, you c
     # 3 Confirm if the path using the dataset is correct
     ```
   4. Run
+
     ```python
     # 1 Enter your project file，
     cd your_project
