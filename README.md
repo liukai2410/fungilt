@@ -37,11 +37,32 @@ However, in fact, the project may contain a large number of files that are not u
 ### 2.2 File tree
 ```python
 ·
-├──src/
-│  ├──train
-│  ├──test
-│  └──model
-
+│──config/
+│  └──config.yaml
+│──datasets/
+│──src/
+│  │──main.py
+│  │──util.py  # Settings and feature selection
+│  │──train/
+│  │  │──train.py
+│  │  └──test.py
+│  │──save_models/  # The model we trained
+│  │──models/
+│  │  │──utils.py
+│  │  └──rnn_models.py
+│  │——feature_extraction/
+│  │  │——labels_encoding.py
+│  │  └──sequence_encoding.py
+│  │——danbert_models/ 
+│  │  │——dnabert-3
+│  │  │——dnabert-4
+│  │  │——dnabert-5
+│  │  │——dnabert-6
+│  │  └──dnabert2
+│——embeddings/  # Intermediate encoding files for data processing
+│——results/
+│  └──tensorboard/  # Draw a learning curve
+└──output.log  # Record the running status of the program
 ```
 ### 2.3 Necessary document description
 
