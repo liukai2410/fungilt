@@ -115,3 +115,45 @@ If you want to use our model for direct prediction or just for validation, you c
 
 ### 4.3 Retrain the model
 If you have your own dataset, we recommend retraining the model. You can modify some parameters as needed to improve its performance on your dataset.
+
+The steps to retrain the model are as follows：
+
+  1. Project configuration.
+
+     ```python
+     config.yaml  # Contains most of the modifiable configuration information
+     src/mian.py
+     src/utils.py
+     src/train/train.py  # training model
+     src/models/  # Saved multiple model architectures
+     src/feature_extraction/  # Encode the sequence
+     src/danbert_models/  # Saved the pre trained model of dnabert for sequence encoding processing (if needed)
+     
+     ```
+  2. Data processing.
+
+      ```python
+     # 1 Process the dataset format based on our own dataset
+     # 2 We provide methods for processing datasets, including files in the most commonly used fasta format
+     data_processing.py
+     ```
+  3. Modify configuration information
+
+     ```python
+     # 1 Ensure that the training mode of the model is enabled
+     train_mode:
+       enable : 1
+     # 2 Confirm that the kmer, sequence encoding method, etc. meet the requirements of the specific model
+     # 3 Confirm if the path using the dataset is correct
+     # 4 Provides more flexible and diverse parameter settings, including the model architecture used, learning rate, loss function, and some mechanisms of the training process. You can make adjustments according to your own needs to train a personalized model that fits your dataset.
+     ```
+  4. Run
+
+     ```python
+     # 1 Enter your project file，
+     cd your_project
+     # 2 Activate your operating environment
+     conda activate your_env_name
+     # 3 Run, reload the running information to the log file
+     nohup python ./src/main.py > ./src/output.log 2>&1
+     ```
