@@ -3,6 +3,8 @@ a deep learning framework for robust classification of fungal species from ITS s
 
 ![abstract](./images/fig0.png)
 
+Note: The data and code are incomplete, and some content will be uploaded after the paper is included.
+
 ## 1 Environment configuration
 
 ### 1.1 Environment dependent files
