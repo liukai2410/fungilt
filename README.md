@@ -159,3 +159,36 @@ The steps to retrain the model are as follows：
      # 3 Run, reload the running information to the log file
      nohup python ./src/main.py > ./src/output.log 2>&1
      ```
+## 5 FungiLT Analysis Platform
+In order to lower the threshold for use, we have built an analysis platform that simplifies the operations of species retrieval and species classification annotation.
+
+![系统展示](https://github.com/user-attachments/assets/5af2fdb7-b928-433f-b1e6-ab539a347aa0)
+
+### 5.1 Local deployment
+
+If the project deployment has been completed locally and the model training has been completed, the following operations can be performed in the background:
+
+  1. Start the runtime environment (not required for data retrieval only)
+  ```
+  conda activate environment_name
+  ```
+  2. Start the backend system
+  ```
+  # All parameters are required
+  ./server [Port] [working directory]
+  ```
+  3. Browser access
+  ```
+  ip:port
+  ```
+
+### 5.2 Directly utilize our resources
+
+Usually we don't want you to do this, our network is internal and external networks are difficult to connect stably.
+
+Usage steps:
+```
+# Browser direct access
+172.16.170.150:10000
+```
+
