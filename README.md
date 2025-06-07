@@ -67,10 +67,9 @@ However, in fact, the project may contain a large number of files that are not u
 └──output.log  # Record the running status of the program
 ```
 ## 3 Quickstart
-## 4 Instructions
-### 4.1 Data preparation
+### 3.1 Data preparation
 
-### 4.2 Using pre trained models
+### 3.2 Using pre trained models
 We offer multiple models that have been trained on different fungal scales, and you can choose to use our pre trained models directly, which will greatly reduce training time and computational costs.
 
 **Note**: But if you have your own dataset, we often recommend using our model structure for retraining and parameter tuning, which may yield better results on your dataset.
@@ -115,7 +114,7 @@ If you want to use our model for direct prediction or just for validation, you c
      nohup python ./src/main.py > ./src/output.log 2>&1
      ```
 
-### 4.3 Retrain the model
+### 3.3 Retrain the model
 If you have your own dataset, we recommend retraining the model. You can modify some parameters as needed to improve its performance on your dataset.
 
 The steps to retrain the model are as follows：
@@ -159,12 +158,12 @@ The steps to retrain the model are as follows：
      # 3 Run, reload the running information to the log file
      nohup python ./src/main.py > ./src/output.log 2>&1
      ```
-## 5 FungiLT Analysis Platform
+## 4 FungiLT Analysis Platform
 In order to lower the threshold for use, we have built an analysis platform that simplifies the operations of species retrieval and species classification annotation.
 
 ![系统展示](https://github.com/user-attachments/assets/5af2fdb7-b928-433f-b1e6-ab539a347aa0)
 
-### 5.1 Local deployment
+### 4.1 Local deployment
 
 If the project deployment has been completed locally and the model training has been completed, the following operations can be performed in the background:
 
@@ -182,7 +181,7 @@ If the project deployment has been completed locally and the model training has 
   ip:port
   ```
 
-### 5.2 Directly utilize our resources
+### 4.2 Directly utilize our resources
 
 Usually we don't want you to do this, our network is internal and external networks are difficult to connect stably.
 
@@ -192,3 +191,24 @@ Usage steps:
 172.16.170.150:10000
 ```
 
+## 5 Note
+
+### 5.1 Three operation modes
+FungiLT provides three ways of operation:
+  1. directly run on local deployment
+  2. command line mode
+  3. system Analysis Platform
+
+### 5.2 Recommended working mode
+We recommend local deployment, directly modifying the corresponding source code to complete the training and application of the model.
+
+### 5.3 Annotation Results Explanation
+Before generating the final annotation result, it is important to check several things:
+  1. Is the data file set correctly
+  2. Whether the sequence encoding and label encoding files are correct (when using a new dataset, new file names should be generated or old files should be deleted to prevent confusion).
+  3. Ensure that the generated label mapping file corresponds to the original training label file during testing or actual validation.
+  4. Carefully check the configuration file 'config. yaml'
+  5. The usual inspection steps are:
+    1). Check if all settings in the configuration file are correct or as expected
+    2). Check the sequence encoding method, label encoding method, and generated file path, etc.
+    3). Check whether dual channel or single channel is used, and whether the corresponding data segmentation processing, training, and testing strategies are consistent.
