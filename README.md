@@ -191,6 +191,16 @@ Usage steps:
 172.16.170.150:10000
 ```
 
+### 4.3 Quick Start Demo
+```
+# Background startup environment
+conda activate deeplearning
+# Start the system
+./server 10000 ./
+# Browser access
+172.16.170.150:10000
+```
+
 ## 5 Note
 
 ### 5.1 Three operation modes
